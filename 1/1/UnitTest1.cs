@@ -16,12 +16,13 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            driver = new ChromeDriver();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            driver.Navigate().GoToUrl("https://site2017.ingos.ru/travel/abroad/calc/");
-            driver.Manage().Window.FullScreen();
-            driver.FindElement(By.XPath("//span[@class='multiselect__empty ng-scope']")).Click();
-            driver.Quit();
+                        driver = new ChromeDriver();
+                        wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                        driver.Navigate().GoToUrl("https://www.google.com/");
+                        driver.Manage().Window.Maximize();
+                        driver.FindElement(By.Name("q")).SendKeys("webdriver");
+                        driver.FindElement(By.XPath("//input[@value='Поиск в Google']")).Click();
+                       // driver.Quit();
         }
 
     }
